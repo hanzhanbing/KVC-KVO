@@ -20,6 +20,7 @@
 		96CBBAD7207DF6C6008E0F66 /* KVC_KVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */; };
 		96CBBADB207DF7D6008E0F66 /* KVOImplementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */; };
 		96CBBAE0207E093C008E0F66 /* KVCSearchBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */; };
+		96CBBAE5207E4263008E0F66 /* KVOUITableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAE4207E4263008E0F66 /* KVOUITableViewVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		96CBBADE207E093C008E0F66 /* KVCSearchBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCSearchBarVC.h; sourceTree = "<group>"; };
 		96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCSearchBarVC.m; sourceTree = "<group>"; };
 		96CBBAE1207E0B6C008E0F66 /* KVC-KVO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KVC-KVO.pch"; sourceTree = "<group>"; };
+		96CBBAE3207E4263008E0F66 /* KVOUITableViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOUITableViewVC.h; sourceTree = "<group>"; };
+		96CBBAE4207E4263008E0F66 /* KVOUITableViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOUITableViewVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 				96CBBAD3207DF399008E0F66 /* KVC、KVO详解 */,
 				96CBBADC207DF7FA008E0F66 /* KVO底层实现 */,
 				96CBBADD207E08B1008E0F66 /* KVC、UISearchBar */,
+				96CBBAE2207E421E008E0F66 /* KVO、UITableView */,
 				96CBBAC3207DEB05008E0F66 /* Supporting Files */,
 			);
 			path = "KVC-KVO";
@@ -146,6 +150,15 @@
 				96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */,
 			);
 			path = "KVC、UISearchBar";
+			sourceTree = "<group>";
+		};
+		96CBBAE2207E421E008E0F66 /* KVO、UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				96CBBAE3207E4263008E0F66 /* KVOUITableViewVC.h */,
+				96CBBAE4207E4263008E0F66 /* KVOUITableViewVC.m */,
+			);
+			path = "KVO、UITableView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +242,7 @@
 				96CBBAC6207DEB3A008E0F66 /* Person.m in Sources */,
 				96CBBAAF207DEAF5008E0F66 /* AppDelegate.m in Sources */,
 				96CBBADB207DF7D6008E0F66 /* KVOImplementVC.m in Sources */,
+				96CBBAE5207E4263008E0F66 /* KVOUITableViewVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

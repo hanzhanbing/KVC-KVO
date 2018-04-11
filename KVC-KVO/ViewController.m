@@ -10,6 +10,7 @@
 #import "KVC_KVO_VC.h"
 #import "KVOImplementVC.h"
 #import "KVCSearchBarVC.h"
+#import "KVOUITableViewVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"KVC&KVO";
+    self.title = @"KVC-KVO";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init]; //不显示没内容的cell
@@ -37,7 +39,7 @@
 - (NSArray *)dataArr {
     if(_dataArr==nil)
     {
-        _dataArr = @[@"KVC、KVO详解",@"KVO底层实现",@"KVC、UISearchBar"];
+        _dataArr = @[@"KVC、KVO详解",@"KVO底层实现",@"KVC、UISearchBar",@"KVO、UITableView"];
     }
     return _dataArr;
 }
@@ -46,14 +48,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArr.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40.0f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.0001;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,6 +87,12 @@
     if ([title isEqualToString:@"KVC、UISearchBar"]) {
         KVCSearchBarVC *vc = [[KVCSearchBarVC alloc] init];
         vc.title = @"KVC、UISearchBar";
+        [self.navigationController pushViewController:vc animated:NO];
+    }
+    
+    if ([title isEqualToString:@"KVO、UITableView"]) {
+        KVOUITableViewVC *vc = [[KVOUITableViewVC alloc] init];
+        vc.title = @"KVO、UITableView";
         [self.navigationController pushViewController:vc animated:NO];
     }
 }

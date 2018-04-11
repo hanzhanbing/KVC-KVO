@@ -15,4 +15,7 @@
 #define kStatusBarH (IS_IPhoneX?44:20)
 #define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 
+#define kColorFromRGBHex(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
+#define KNavBarColor kColorFromRGBHex(0x71CEFA)
+
 #endif /* KVC_KVO_pch */
