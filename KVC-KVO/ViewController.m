@@ -7,10 +7,18 @@
 //
 
 #import "ViewController.h"
-#import "Person.h"
-#import "PersonWatcher.h"
+#import "KVC_KVO_VC.h"
+#import "KVOImplementVC.h"
 
-@interface ViewController ()
+#define WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define kNavBarH (IS_IPhoneX?88:64)
+#define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
+
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSArray *dataArr;
 
 @end
 
@@ -19,40 +27,72 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化hzb这个人
-    Person *p = [[Person alloc] init];
-    [p setValue:@"Jason_hzb" forKey:@"name"];
-    [p setValue:@"丰台区" forKey:@"address"];
+    self.title = @"KVC&KVO";
     
-    //Jason_hzb把名字改成了hzb
-    changeName(p, @"hzb");
-    
-    //初始化zyl这个人
-    Person *spouse = [[Person alloc] init];
-    [p setValue:spouse forKey:@"spouse"];
-    [p setValue:@"zyl" forKeyPath:@"spouse.name"];
-    
-    //hzb与zyl结婚
-    logMarriage(p);
-    
-    //给hzb这个人绑定观察者（KVO）
-    PersonWatcher *watcher = [[PersonWatcher alloc] init];
-    [watcher watchPersonForChangeOfAddress:p];
-    
-    //hzb的地址由丰台区改成朝阳区
-    [p setValue:@"朝阳区" forKey:@"address"];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT) style:UITableViewStylePlain];
+    self.tableView.tableFooterView = [[UIView alloc] init]; //不显示没内容的cell
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
 }
 
-void changeName(Person *p, NSString *newName) {
-    NSString *originalName = [p valueForKey:@"name"];
-    [p setValue:newName forKey:@"name"];
-    NSLog(@"Changed %@'s name to: %@", originalName, newName);
+#pragma mark - lazy loading...
+
+- (NSArray *)dataArr {
+    if(_dataArr==nil)
+    {
+        _dataArr = @[@"KVC、KVO详解",@"KVO底层实现"];
+    }
+    return _dataArr;
 }
 
-void logMarriage(Person *p) {
-    NSString *personsName = [p valueForKey:@"name"];
-    NSString *spousesName = [p valueForKeyPath:@"spouse.name"];
-    NSLog(@"%@ is happily married to %@", personsName, spousesName);
+#pragma mark - UITableViewDelegate、UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArr.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *ID = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    cell.textLabel.text = self.dataArr[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; //取消选择状态
+    
+    NSString *title = self.dataArr[indexPath.row];
+    
+    if ([title isEqualToString:@"KVC、KVO详解"]) {
+        
+        KVC_KVO_VC *vc = [[KVC_KVO_VC alloc] init];
+        vc.title = @"KVC、KVO详解";
+        [self.navigationController pushViewController:vc animated:NO];
+    }
+    
+    if ([title isEqualToString:@"KVO底层实现"]) {
+        KVOImplementVC *vc = [[KVOImplementVC alloc] init];
+        vc.title = @"KVO底层实现";
+        [self.navigationController pushViewController:vc animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

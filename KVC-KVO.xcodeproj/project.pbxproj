@@ -15,6 +15,10 @@
 		96CBBABD207DEAF5008E0F66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBABC207DEAF5008E0F66 /* main.m */; };
 		96CBBAC6207DEB3A008E0F66 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAC5207DEB3A008E0F66 /* Person.m */; };
 		96CBBAC9207DEB50008E0F66 /* PersonWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAC8207DEB50008E0F66 /* PersonWatcher.m */; };
+		96CBBACD207DEEE7008E0F66 /* NSObject+HZB_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBACC207DEEE7008E0F66 /* NSObject+HZB_KVO.m */; };
+		96CBBAD0207DEF6C008E0F66 /* HZB_KVONotifying_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBACF207DEF6C008E0F66 /* HZB_KVONotifying_Person.m */; };
+		96CBBAD7207DF6C6008E0F66 /* KVC_KVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */; };
+		96CBBADB207DF7D6008E0F66 /* KVOImplementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,14 @@
 		96CBBAC5207DEB3A008E0F66 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		96CBBAC7207DEB50008E0F66 /* PersonWatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonWatcher.h; sourceTree = "<group>"; };
 		96CBBAC8207DEB50008E0F66 /* PersonWatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonWatcher.m; sourceTree = "<group>"; };
+		96CBBACB207DEEE7008E0F66 /* NSObject+HZB_KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HZB_KVO.h"; sourceTree = "<group>"; };
+		96CBBACC207DEEE7008E0F66 /* NSObject+HZB_KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HZB_KVO.m"; sourceTree = "<group>"; };
+		96CBBACE207DEF6C008E0F66 /* HZB_KVONotifying_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZB_KVONotifying_Person.h; sourceTree = "<group>"; };
+		96CBBACF207DEF6C008E0F66 /* HZB_KVONotifying_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZB_KVONotifying_Person.m; sourceTree = "<group>"; };
+		96CBBAD5207DF6C6008E0F66 /* KVC_KVO_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVC_KVO_VC.h; sourceTree = "<group>"; };
+		96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVC_KVO_VC.m; sourceTree = "<group>"; };
+		96CBBAD9207DF7D6008E0F66 /* KVOImplementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOImplementVC.h; sourceTree = "<group>"; };
+		96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOImplementVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +80,9 @@
 				96CBBAAE207DEAF5008E0F66 /* AppDelegate.m */,
 				96CBBAB0207DEAF5008E0F66 /* ViewController.h */,
 				96CBBAB1207DEAF5008E0F66 /* ViewController.m */,
-				96CBBAC4207DEB3A008E0F66 /* Person.h */,
-				96CBBAC5207DEB3A008E0F66 /* Person.m */,
-				96CBBAC7207DEB50008E0F66 /* PersonWatcher.h */,
-				96CBBAC8207DEB50008E0F66 /* PersonWatcher.m */,
+				96CBBAD8207DF731008E0F66 /* Model */,
+				96CBBAD3207DF399008E0F66 /* KVC、KVO详解 */,
+				96CBBADC207DF7FA008E0F66 /* KVO底层实现 */,
 				96CBBAC3207DEB05008E0F66 /* Supporting Files */,
 			);
 			path = "KVC-KVO";
@@ -87,6 +98,39 @@
 				96CBBABC207DEAF5008E0F66 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96CBBAD3207DF399008E0F66 /* KVC、KVO详解 */ = {
+			isa = PBXGroup;
+			children = (
+				96CBBAD5207DF6C6008E0F66 /* KVC_KVO_VC.h */,
+				96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */,
+				96CBBAC7207DEB50008E0F66 /* PersonWatcher.h */,
+				96CBBAC8207DEB50008E0F66 /* PersonWatcher.m */,
+			);
+			path = "KVC、KVO详解";
+			sourceTree = "<group>";
+		};
+		96CBBAD8207DF731008E0F66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96CBBAC4207DEB3A008E0F66 /* Person.h */,
+				96CBBAC5207DEB3A008E0F66 /* Person.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CBBADC207DF7FA008E0F66 /* KVO底层实现 */ = {
+			isa = PBXGroup;
+			children = (
+				96CBBAD9207DF7D6008E0F66 /* KVOImplementVC.h */,
+				96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */,
+				96CBBACB207DEEE7008E0F66 /* NSObject+HZB_KVO.h */,
+				96CBBACC207DEEE7008E0F66 /* NSObject+HZB_KVO.m */,
+				96CBBACE207DEF6C008E0F66 /* HZB_KVONotifying_Person.h */,
+				96CBBACF207DEF6C008E0F66 /* HZB_KVONotifying_Person.m */,
+			);
+			path = "KVO底层实现";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +205,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				96CBBAB2207DEAF5008E0F66 /* ViewController.m in Sources */,
+				96CBBACD207DEEE7008E0F66 /* NSObject+HZB_KVO.m in Sources */,
+				96CBBAD7207DF6C6008E0F66 /* KVC_KVO_VC.m in Sources */,
+				96CBBAD0207DEF6C008E0F66 /* HZB_KVONotifying_Person.m in Sources */,
 				96CBBABD207DEAF5008E0F66 /* main.m in Sources */,
 				96CBBAC9207DEB50008E0F66 /* PersonWatcher.m in Sources */,
 				96CBBAC6207DEB3A008E0F66 /* Person.m in Sources */,
 				96CBBAAF207DEAF5008E0F66 /* AppDelegate.m in Sources */,
+				96CBBADB207DF7D6008E0F66 /* KVOImplementVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
