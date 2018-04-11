@@ -19,6 +19,7 @@
 		96CBBAD0207DEF6C008E0F66 /* HZB_KVONotifying_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBACF207DEF6C008E0F66 /* HZB_KVONotifying_Person.m */; };
 		96CBBAD7207DF6C6008E0F66 /* KVC_KVO_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */; };
 		96CBBADB207DF7D6008E0F66 /* KVOImplementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */; };
+		96CBBAE0207E093C008E0F66 /* KVCSearchBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		96CBBAD6207DF6C6008E0F66 /* KVC_KVO_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVC_KVO_VC.m; sourceTree = "<group>"; };
 		96CBBAD9207DF7D6008E0F66 /* KVOImplementVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOImplementVC.h; sourceTree = "<group>"; };
 		96CBBADA207DF7D6008E0F66 /* KVOImplementVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOImplementVC.m; sourceTree = "<group>"; };
+		96CBBADE207E093C008E0F66 /* KVCSearchBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCSearchBarVC.h; sourceTree = "<group>"; };
+		96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCSearchBarVC.m; sourceTree = "<group>"; };
+		96CBBAE1207E0B6C008E0F66 /* KVC-KVO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KVC-KVO.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				96CBBAD8207DF731008E0F66 /* Model */,
 				96CBBAD3207DF399008E0F66 /* KVC、KVO详解 */,
 				96CBBADC207DF7FA008E0F66 /* KVO底层实现 */,
+				96CBBADD207E08B1008E0F66 /* KVC、UISearchBar */,
 				96CBBAC3207DEB05008E0F66 /* Supporting Files */,
 			);
 			path = "KVC-KVO";
@@ -91,6 +96,7 @@
 		96CBBAC3207DEB05008E0F66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96CBBAE1207E0B6C008E0F66 /* KVC-KVO.pch */,
 				96CBBAB3207DEAF5008E0F66 /* Main.storyboard */,
 				96CBBAB6207DEAF5008E0F66 /* Assets.xcassets */,
 				96CBBAB8207DEAF5008E0F66 /* LaunchScreen.storyboard */,
@@ -131,6 +137,15 @@
 				96CBBACF207DEF6C008E0F66 /* HZB_KVONotifying_Person.m */,
 			);
 			path = "KVO底层实现";
+			sourceTree = "<group>";
+		};
+		96CBBADD207E08B1008E0F66 /* KVC、UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				96CBBADE207E093C008E0F66 /* KVCSearchBarVC.h */,
+				96CBBADF207E093C008E0F66 /* KVCSearchBarVC.m */,
+			);
+			path = "KVC、UISearchBar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +224,7 @@
 				96CBBAD7207DF6C6008E0F66 /* KVC_KVO_VC.m in Sources */,
 				96CBBAD0207DEF6C008E0F66 /* HZB_KVONotifying_Person.m in Sources */,
 				96CBBABD207DEAF5008E0F66 /* main.m in Sources */,
+				96CBBAE0207E093C008E0F66 /* KVCSearchBarVC.m in Sources */,
 				96CBBAC9207DEB50008E0F66 /* PersonWatcher.m in Sources */,
 				96CBBAC6207DEB3A008E0F66 /* Person.m in Sources */,
 				96CBBAAF207DEAF5008E0F66 /* AppDelegate.m in Sources */,
@@ -348,6 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KPJVYXL9VV;
+				GCC_PREFIX_HEADER = "KVC-KVO/KVC-KVO.pch";
 				INFOPLIST_FILE = "KVC-KVO/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzb.KVC-KVO";
@@ -362,6 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KPJVYXL9VV;
+				GCC_PREFIX_HEADER = "KVC-KVO/KVC-KVO.pch";
 				INFOPLIST_FILE = "KVC-KVO/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hzb.KVC-KVO";

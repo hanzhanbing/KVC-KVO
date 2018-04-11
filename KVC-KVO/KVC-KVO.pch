@@ -1,0 +1,18 @@
+//
+//  KVC-KVO.pch
+//  KVC-KVO
+//
+//  Created by Jason on 2018/4/11.
+//  Copyright © 2018年 hzb. All rights reserved.
+//
+
+#ifndef KVC_KVO_pch
+#define KVC_KVO_pch
+
+#define WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define kNavBarH (IS_IPhoneX?88:64)
+#define kStatusBarH (IS_IPhoneX?44:20)
+#define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
+
+#endif /* KVC_KVO_pch */

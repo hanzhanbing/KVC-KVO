@@ -9,11 +9,7 @@
 #import "ViewController.h"
 #import "KVC_KVO_VC.h"
 #import "KVOImplementVC.h"
-
-#define WIDTH  [[UIScreen mainScreen] bounds].size.width
-#define HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define kNavBarH (IS_IPhoneX?88:64)
-#define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
+#import "KVCSearchBarVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,7 +37,7 @@
 - (NSArray *)dataArr {
     if(_dataArr==nil)
     {
-        _dataArr = @[@"KVC、KVO详解",@"KVO底层实现"];
+        _dataArr = @[@"KVC、KVO详解",@"KVO底层实现",@"KVC、UISearchBar"];
     }
     return _dataArr;
 }
@@ -91,6 +87,12 @@
     if ([title isEqualToString:@"KVO底层实现"]) {
         KVOImplementVC *vc = [[KVOImplementVC alloc] init];
         vc.title = @"KVO底层实现";
+        [self.navigationController pushViewController:vc animated:NO];
+    }
+    
+    if ([title isEqualToString:@"KVC、UISearchBar"]) {
+        KVCSearchBarVC *vc = [[KVCSearchBarVC alloc] init];
+        vc.title = @"KVC、UISearchBar";
         [self.navigationController pushViewController:vc animated:NO];
     }
 }
