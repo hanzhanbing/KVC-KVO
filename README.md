@@ -4,4 +4,4 @@
     3、[使用KVC改变UISearchBar外观](https://www.jianshu.com/p/cd40f1638d1d "使用KVC改变UISearchBar外观")；<br>
     4、[使用KVO实现导航条渐变效果](https://www.jianshu.com/p/b61284cae1bd "使用KVO实现导航条渐变效果")；<br>
 ## 工程结构：
-![](https://github.com/hanzhanbing/KVC-KVO/raw/master/function.png)
+![](https://github.com/hanzhanbing/KVC-KVO/blob/master/KVC-KVO/function.png)
